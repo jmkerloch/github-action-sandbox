@@ -87,6 +87,7 @@ jobs:
     - name : Install deps with VCPKG
       run: |
           cd vcpkg
+          git checkout master
           ./bootstrap-vcpkg.sh
           vcpkg update
           vcpkg install jsoncpp gtest boost-mpi boost-program-options --triplet ${{matrix.triplet}}
